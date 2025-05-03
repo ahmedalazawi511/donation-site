@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ادعمني وساعدني</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .wallet {
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      word-wrap: break-word;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #00d1b2;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    img.qr {
+      margin-top: 20px;
+      width: 200px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ادعمني وساعدني</h1>
+  <p>هدفي جمع <strong>4000 دولار</strong> من خلال التبرعات لدعم مشروعي 🙏</p>
+
+  <div class="wallet">
+    <p>عنوان محفظة USDT (TRC20):</p>
+    <p id="wallet">TAySFeRaE1Wp2e9BgPd3p5kZKeVcDFR2S4</p>
+    <button onclick="copyAddress()">📋 نسخ العنوان</button>
+    <br/>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TAySFeRaE1Wp2e9BgPd3p5kZKeVcDFR2S4" alt="QR Code" class="qr"/>
+  </div>
+
+  <footer>شكراً لدعمك! كل تبرع يُحدث فرقاً 💚</footer>
+
+  <script>
+    function copyAddress() {
+      const address = document.getElementById("wallet").textContent;
+      navigator.clipboard.writeText(address).then(() => {
+        alert("تم نسخ عنوان المحفظة!");
+      });
+    }
+  </script>
+</body>
+</html>
